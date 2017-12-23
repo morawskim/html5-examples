@@ -1,0 +1,11 @@
+{
+  "name": "socket.io-simple-chat",
+  "authors": [
+    "Marcin Morawski <marcin@morawskim.pl>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "socket.io-client": "^2.0.4"
+  }
+}

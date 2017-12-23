@@ -1,0 +1,14 @@
+{
+  "name": "socket.io-simple-chat",
+  "version": "0.1.0",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
