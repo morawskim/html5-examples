@@ -1,0 +1,17 @@
+{
+  "name": "@mmo/babel-standalone-example",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "author": "",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.2"
+  }
+}

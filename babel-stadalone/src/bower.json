@@ -1,0 +1,14 @@
+{
+  "name": "@mmo/babel-standalone-example",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Marcin Morawski <marcin@morawskim.pl>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/morawskim/html5-examples",
+  "private": true,
+  "dependencies": {
+    "babel-standalone": "^6.19.0"
+  }
+}
