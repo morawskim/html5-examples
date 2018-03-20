@@ -10,4 +10,8 @@ export class PostService {
   posts() {
     return this.http.get(this.apiRoot + '/posts');
   }
+
+  getPost(id) {
+    return this.http.get(this.apiRoot + `/posts/${id}`);
+  }
 }
