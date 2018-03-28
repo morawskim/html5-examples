@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Validators as AppValidators } from '../../models/validators'
 
 @Component({
   selector: 'app-comment-form',
@@ -14,7 +15,7 @@ export class CommentFormComponent implements OnInit {
   ngOnInit() {
     this.commentFormGroup = new FormGroup({
       nick: new FormControl('', Validators.required),
-      comment: new FormControl('', Validators.required)
+      comment: new FormControl('', AppValidators.startsWith('AAA'))
     });
   }
 
