@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Validators as AppValidators } from '../../models/validators'
+import { CommentModel } from '../../models/comment.model';
 
 @Component({
   selector: 'app-comment-form',
@@ -10,13 +11,28 @@ import { Validators as AppValidators } from '../../models/validators'
 export class CommentFormComponent implements OnInit {
   private commentFormGroup: FormGroup;
 
+  @Input()
+  private postId :number;
+
+  @Output()
+  private addComment = new EventEmitter<CommentModel>();
+
   constructor() { }
 
   ngOnInit() {
     this.commentFormGroup = new FormGroup({
-      nick: new FormControl('', Validators.required),
-      comment: new FormControl('', AppValidators.startsWith('AAA'))
+      name: new FormControl('', Validators.required),
+      body: new FormControl('', AppValidators.startsWith('AAA'))
     });
   }
 
+  submitForm() {
+    if (this.commentFormGroup.valid) {
+      let model : CommentModel = new CommentModel();
+      model.postId = this.postId;
+      model.body = this.commentFormGroup.value.body;
+      model.name = this.commentFormGroup.value.name;
+      this.addComment.emit(model);
+    }
+  }
 }

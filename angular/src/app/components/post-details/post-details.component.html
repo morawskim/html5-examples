@@ -2,5 +2,9 @@
 
 <div>{{post?.body}}</div>
 
+<div *ngFor="let comment of comments" class="row">
+    <div class="col-sm-12">{{ comment.name }}</div>
+    <div class="col-sm-12">{{ comment.body }}</div>
+</div>
 
-<app-comment-form></app-comment-form>
+<app-comment-form [postId]="post?.id" (addComment)="appendComment($event)"></app-comment-form>
