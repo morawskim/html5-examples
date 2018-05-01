@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Togetherjs</title>
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            var TogetherJSConfig_dontShowClicks = true;
+            var TogetherJSConfig_suppressJoinConfirmation = true;
+            var TogetherJSConfig_inviteFromRoom = false;
+            var TogetherJSConfig_autoStart = true;
+            var TogetherJSConfig_disableWebRTC = true;
+            var TogetherJSConfig_ignoreForms = true;
+            var TogetherJSConfig_suppressInvite = true;
+            TogetherJSConfig_suppressJoinConfirmation = true;
+            var TogetherJSConfig_findRoom = 'togetherjsexample'
+            TogetherJSConfig_storagePrefix = "tjs_example";
+            var TogetherJSConfig_on_ready = function () {
+                $(".togetherjs-cursor").hide();
+            };
+        </script>
+        <script src="https://togetherjs.com/togetherjs-min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            function sendTogetherjsCustomEvent() {
+                var $messageEl = $('#message');
+                var message = $messageEl.val();
+                if (TogetherJS.running) {
+                    TogetherJS.send({type: "custom-event", text: message});
+                }
+                $messageEl.val('');
+            }
+            TogetherJS.hub.on("custom-event", function (msg) {
+                var $el = $('<p></p>');
+                $el.text(msg.text);
+                $('#log').prepend($el);
+});
+        </script>
+    </head>
+    <body>
+        <input id="message" type="text" placeholder="message to send" />
+        <button onclick="sendTogetherjsCustomEvent();">Send togetherjs event</button>
+        <div id="log"></div>
+    </body>
+</html>
