@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SpeechSynthesis</title>
+</head>
+<body>
+    <select id="voices"></select>
+    <textarea id="message"></textarea>
+    <button id="btn">Speak</button>
+
+<script type="text/javascript">
+    function checkWebSpeechApi () {
+        if (!speechSynthesis in window) {
+            alert("Brak obsługi Web Speech API");
+            return false;
+        }
+        return true;
+    }
+
+    function setVoices (voices) {
+        var voiceEl = document.getElementById("voices");
+        if (voices.length !== 0) {
+            for (var i = 0; i < voices.length; i++) {
+                voiceEl.innerHTML += '<option value="' + voices[i].name + '">' + voices[i].name + '</option>';
+            }
+            clearInterval(watch);
+        }
+    }
+
+    function speak (message, voice) {
+        if (!checkWebSpeechApi) {
+            return;
+        }
+
+        var utterance = new SpeechSynthesisUtterance();
+        utterance.text = message;
+        utterance.lang = voice;
+        speechSynthesis.speak(utterance);
+    }
+
+    var el = document.querySelector('#btn');
+    el.addEventListener('click', function () {
+        var txtEl = document.querySelector('#message');
+        var voiceEl = document.querySelector('#voices');
+        speak(txtEl.value, voiceEl.value);
+    });
+
+
+    function getVoices() {
+        return new Promise(resolve => {
+            let voices = speechSynthesis.getVoices();
+            if (voices.length) {
+                resolve(voices);
+                return
+            }
+            speechSynthesis.onvoiceschanged = function() {
+                voices = speechSynthesis.getVoices();
+                resolve(voices)
+            }
+        })
+    }
+
+    async function setUpVoicesList() {
+        setVoices(await  getVoices());
+    }
+    setUpVoicesList();
+</script>
+</body>
+</html>
