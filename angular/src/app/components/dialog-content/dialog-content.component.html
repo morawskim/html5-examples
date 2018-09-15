@@ -1,0 +1,13 @@
+<p class="text-success" *ngIf="true === result">Sucess</p>
+<p class="text-danger" *ngIf="false === result">Error</p>
+
+<div *ngIf="true !== result">
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username or email">
+    <mat-icon matPrefix>person</mat-icon>
+  </mat-form-field>
+
+  <div class="button-row">
+    <button (click)="sendForm()" mat-raised-button color="primary">Send</button>
+  </div>
+</div>
