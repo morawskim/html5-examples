@@ -3,8 +3,23 @@
 <div>{{post?.body}}</div>
 
 <div *ngFor="let comment of comments" class="row">
+    <ng-container *ngIf="comment.name == 'me'">
+        <ng-container *ngTemplateOutlet="commentMe; context: {comment: comment}"></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="comment.name !== 'me'">
+        <ng-container *ngTemplateOutlet="commentUser; context: {comment: comment}"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #commentMe let-comment="comment">
+    <div class="col-sm-12"><strong>{{ comment.name }}</strong></div>
+    <div class="col-sm-12 alert-warning">{{ comment.body }}</div>
+</ng-template>
+
+<ng-template #commentUser let-comment="comment">
     <div class="col-sm-12">{{ comment.name }}</div>
     <div class="col-sm-12">{{ comment.body }}</div>
-</div>
+</ng-template>
 
 <app-comment-form [postId]="post?.id" (addComment)="appendComment($event)"></app-comment-form>
