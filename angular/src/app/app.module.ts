@@ -14,6 +14,7 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 import { DialogTriggerComponent } from './components/dialog-trigger/dialog-trigger.component';
+import { StaticFormFieldComponent } from './components/static-form-field/static-form-field.component';
 
 const appConfigFactory = (configService :AppConfigurationService) => {
   return () => {
@@ -28,7 +29,8 @@ const appConfigFactory = (configService :AppConfigurationService) => {
     PostDetailsComponent,
     CommentFormComponent,
     DialogContentComponent,
-    DialogTriggerComponent
+    DialogTriggerComponent,
+    StaticFormFieldComponent
   ],
   imports: [
     BrowserModule,
