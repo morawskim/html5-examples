@@ -15,6 +15,8 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 import { DialogTriggerComponent } from './components/dialog-trigger/dialog-trigger.component';
 import { StaticFormFieldComponent } from './components/static-form-field/static-form-field.component';
+import { InputErrorStateMatcherExample } from './components/input-error-state-matcher-example/input-error-state-matcher-example';
+import { FormsModule } from '@angular/forms';
 
 const appConfigFactory = (configService :AppConfigurationService) => {
   return () => {
@@ -30,7 +32,8 @@ const appConfigFactory = (configService :AppConfigurationService) => {
     CommentFormComponent,
     DialogContentComponent,
     DialogTriggerComponent,
-    StaticFormFieldComponent
+    StaticFormFieldComponent,
+    InputErrorStateMatcherExample
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ const appConfigFactory = (configService :AppConfigurationService) => {
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
+    FormsModule,
   ],
   providers: [
     PostService,
