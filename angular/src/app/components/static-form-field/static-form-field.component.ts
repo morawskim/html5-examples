@@ -43,12 +43,8 @@ export class StaticFormFieldComponent implements ControlValueAccessor, MatFormFi
     private _required = false;
 
     @Input()
-    get disabled(): boolean { return this._disabled; }
-    set disabled(value: boolean) {
-        this._disabled = coerceBooleanProperty(value);
-        this.stateChanges.next();
-    }
-    private _disabled = false;
+    get disabled(): boolean { return true }
+    set disabled(value: boolean) {}
 
     @Input()
     get value(): string {
