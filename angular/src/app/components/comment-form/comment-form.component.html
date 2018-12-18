@@ -6,6 +6,7 @@
 <div class="form-group">
     <label>Nick</label>
     <input formControlName="name" type="text" class="form-control" placeholder="Type me if you want use other template" />
+    <p class="description">If nick===admin and body starts with AAAb you get a depedent validation error!</p>
 </div>
 <div class="form-group">
     <label>Komentarz</label>
@@ -18,6 +19,7 @@
         <mat-error>Example error message</mat-error>
     </mat-form-field>
 
+    <p *ngIf="commentFormGroup.hasError('dependentValidator')">Error dependentValidator</p>
 <input type="submit" value="Add" />
 </form>
 

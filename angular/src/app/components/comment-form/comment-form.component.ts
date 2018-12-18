@@ -23,6 +23,14 @@ export class CommentFormComponent implements OnInit {
     this.commentFormGroup = new FormGroup({
       name: new FormControl('', Validators.required),
       body: new FormControl('', AppValidators.startsWith('AAA'))
+    }, (formGroup) => {
+      if (formGroup.get('name').value === 'admin' && formGroup.get('body').value.toString().startsWith('AAAb')) {
+          return {
+            'dependentValidator': true
+          };
+      }
+
+      return null;
     });
   }
 
