@@ -17,6 +17,7 @@ import { DialogTriggerComponent } from './components/dialog-trigger/dialog-trigg
 import { StaticFormFieldComponent } from './components/static-form-field/static-form-field.component';
 import { InputErrorStateMatcherExample } from './components/input-error-state-matcher-example/input-error-state-matcher-example';
 import { FormsModule } from '@angular/forms';
+import { BsCardComponent } from './components/bs-card/bs-card.component';
 
 const appConfigFactory = (configService :AppConfigurationService) => {
   return () => {
@@ -33,7 +34,8 @@ const appConfigFactory = (configService :AppConfigurationService) => {
     DialogContentComponent,
     DialogTriggerComponent,
     StaticFormFieldComponent,
-    InputErrorStateMatcherExample
+    InputErrorStateMatcherExample,
+    BsCardComponent
   ],
   imports: [
     BrowserModule,
