@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogTriggerComponent } from './dialog-trigger.component';
+import {MatDialogModule, MatDialogModule} from '@angular/material';
 
 describe('DialogTriggerComponent', () => {
   let component: DialogTriggerComponent;
@@ -8,7 +9,8 @@ describe('DialogTriggerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DialogTriggerComponent ]
+      declarations: [ DialogTriggerComponent ],
+        imports: [MatDialogModule]
     })
     .compileComponents();
   }));
