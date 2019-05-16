@@ -24,5 +24,28 @@ describe('Protractor example', () => {
         expect(element(by.css('.field-select2')).getAttribute('value')).toBe(optionValue);
         expect(await element(by.css('.select2-selection__rendered')).getText()).toBe(optionLabel);
     });
-    //todo mmo test for tinymce
+
+    it('should control tinymce', async () => {
+        const tinyMceIframe = await element(by.css('.tox-edit-area iframe')).getWebElement();
+        const elBold = await $('.tox-tbtn[title="Bold"]');
+        const elItalic = await $('.tox-tbtn[title="Italic"]');
+        const textarea = await $('textarea.field-tinymce');
+
+        await elBold.click();
+        await browser.driver.switchTo().frame(tinyMceIframe);
+        const tinyMceBody = await $('#tinymce');
+        await tinyMceBody.sendKeys('Bold');
+        await browser.driver.switchTo().defaultContent();
+        await elBold.click();
+        await elItalic.click();
+        await browser.driver.switchTo().frame(tinyMceIframe);
+        await tinyMceBody.sendKeys('Italic');
+        await browser.driver.switchTo().defaultContent();
+        await elBold.click();
+        await browser.driver.switchTo().frame(tinyMceIframe);
+        await tinyMceBody.sendKeys('Bold&Italic');
+        await browser.driver.switchTo().defaultContent();
+
+        expect(await textarea.getAttribute('value')).toBe('<p><strong>Bold</strong><em>Italic<strong>Bold&amp;Italic</strong></em>Hello, World!</p>');
+    });
 });
