@@ -48,4 +48,12 @@ describe('Protractor example', () => {
 
         expect(await textarea.getAttribute('value')).toBe('<p><strong>Bold</strong><em>Italic<strong>Bold&amp;Italic</strong></em>Hello, World!</p>');
     });
+
+    it('should display popover on mouse hover', async () => {
+        const popoverElement = await element(By.id('popover-example'));
+        await browser.actions().mouseMove(popoverElement).perform();
+
+        const condition = protractor.ExpectedConditions.presenceOf($('div.popover.bs-popover-top'));
+        await browser.wait(condition, 3000, 'Popover not appear');
+    });
 });
