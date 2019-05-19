@@ -56,4 +56,9 @@ describe('Protractor example', () => {
         const condition = protractor.ExpectedConditions.presenceOf($('div.popover.bs-popover-top'));
         await browser.wait(condition, 3000, 'Popover not appear');
     });
+
+    it('should execute js in browser', async () => {
+        const userAgent = await browser.executeScript('return navigator.userAgent');
+        expect(userAgent).toMatch(/Chrome/);
+    });
 });
