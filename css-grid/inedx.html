@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CSS grid</title>
+    <style>
+        .container > div {
+            border: 1px solid black;
+        }
+
+        .container-autofit {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(auto-fit, 200px);
+            grid-template-rows: repeat(2, 100px);
+        }
+
+        .container-minmax {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-rows: repeat(2, 100px);
+        }
+    </style>
+</head>
+<body>
+<h2>Container repeat autofit</h2>
+<div class="container container-autofit">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+</div>
+
+<h2>Container repeat minmax</h2>
+<div class="container container-minmax">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+</div>
+</body>
+</html>
