@@ -1,0 +1,10 @@
+{
+  "name": "puppeteer-example",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Marcin Morawski <marcin@morawskim.pl>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.18.0"
+  }
+}
