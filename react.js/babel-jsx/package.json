@@ -1,0 +1,24 @@
+{
+  "name": "babel-jsx",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d public/",
+    "preserver": "cp node_modules/react/umd/react.development.js ./public/react.js && cp node_modules/react-dom/umd/react-dom.development.js ./public/react-dom.js",
+    "server": "http-server ./public"
+  },
+  "author": "Marcin Morawski <marcin@morawskim.pl>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "http-server": "^0.11.1"
+  }
+}

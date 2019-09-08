@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+    nodejs:
+        image: node:10-alpine
+        environment:
+            - NODE_ENV=develop
+        user: "node"
+        working_dir: /home/node/app
+        volumes:
+            - ./:/home/node/app
+        command: "npm run server"
+        ports:
+            - 8080:8080
