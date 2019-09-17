@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "webpack",
+    "watch": "webpack -w",
     "server": "webpack-dev-server"
   },
   "author": "Marcin Morawski <marcin@morawskim.pl>",
