@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>window error event</title>
+    </head>
+    <body>
+        <h2>When you want add new item, exception will be throw</h2>
+        <p>
+        You should open developer tools and check line and column.
+        And then run command <code>docker-compose exec nodejs ./node_modules/.bin/source-map  resolve  --context 20 ./public/dist/app.bundle.js.map  [line] [column]</code>
+        </p>
+        <div id="react"></div>
+        <script src="/dist/app.bundle.js"></script>
+    </body>
+</html>

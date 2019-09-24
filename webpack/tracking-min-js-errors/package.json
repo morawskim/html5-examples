@@ -1,0 +1,30 @@
+{
+  "name": "error-stack-parser-example",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "prestart": "npm run webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "Marcin Morawski <marcin@morawskim.pl>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "error-stack-parser": "^2.0.4",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "source-map-cli": "^0.2.1",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
