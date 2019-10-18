@@ -1,0 +1,29 @@
+{
+  "name": "react-webpack-example",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "server": "webpack-dev-server",
+    "eslint": "eslint --ext .jsx --ext .js src/"
+  },
+  "author": "Marcin Morawski <marcin@morawskim.pl>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.4.0",
+    "eslint-plugin-react": "^7.14.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
