@@ -1,0 +1,16 @@
+{
+  "name": "redux-basic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcin Morawski <marcin@morawskim.pl>",
+  "license": "MIT",
+  "dependencies": {
+    "immutability-helper": "^3.0.1",
+    "redux": "^4.0.4"
+  }
+}
