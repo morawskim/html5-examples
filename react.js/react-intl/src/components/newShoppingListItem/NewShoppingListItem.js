@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addItemToShoppingList} from '../../actions/shoppingListActions';
-import {FormattedMessage} from 'react-intl';
+import {injectIntl} from 'react-intl';
 
 const ENTER_KEY_CODE = 13;
 
@@ -13,11 +13,10 @@ function NewShoppingListItem(props) {
         }
     };
     return (
-        <FormattedMessage id="list.placeholder">{txt => <input
-            placeholder={txt}
+        <input
+            placeholder={props.intl.formatMessage({id: 'list.placeholder'})}
             onKeyDown={onKeyDown}
-        />}
-        </FormattedMessage>
+        />
     );
 }
 
@@ -27,4 +26,5 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(null, mapDispatchToProps)(NewShoppingListItem);
+const NewShoppingListItemIntl = injectIntl(NewShoppingListItem)
+export default connect(null, mapDispatchToProps)(NewShoppingListItemIntl);
