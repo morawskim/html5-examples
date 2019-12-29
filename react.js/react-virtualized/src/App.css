@@ -1,0 +1,9 @@
+.App {
+    text-align: center;
+}
+
+.list {
+    padding: 10px;
+    height: calc(100vh - 20px);
+    width: 300px;
+}
