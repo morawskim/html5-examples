@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+Install required npm packages `docker-compose run nodejs yarn`
+
+Start containers `docker-compose up -d`
+
+Open browser and go to url `http://127.0.0.1:3000`
+
 ## Available Scripts
 
 In the project directory, you can run:

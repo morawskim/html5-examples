@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {ConfirmationServiceProvider} from "./confirmationService";
+import Card from "./card";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ConfirmationServiceProvider>
+        <Card id={1}/>
+        <Card id={2}/>
+        <Card id={3}/>
+        <Card id={4}/>
+        <Card id={5}/>
+        <Card id={6}/>
+        <Card id={7}/>
+        <Card id={8}/>
+        <Card id={9}/>
+        <Card id={10}/>
+      </ConfirmationServiceProvider>
     </div>
   );
 }
