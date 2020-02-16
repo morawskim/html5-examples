@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {AppContextInterface, useAppContext, withAppContext, AppProvider} from "./context";
+
+interface TestProps {
+  appContext: AppContextInterface
+  title: string
+}
+
+const Test:React.FC<TestProps> = (props) => {
+  return <p>theme: {props.appContext.theme}</p>;
+};
+const TestWithHocAppContext = withAppContext<TestProps>(Test);
+
+
+const FunctionComponentWithUseContext: React.FC = () => {
+  const ctx = useAppContext();
+  return (
+      <>
+        <Test appContext={ctx!} title={'static from function component'} />
+      </>
+  );
+};
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppProvider value={{theme: 'dark'}}>
+        <FunctionComponentWithUseContext />
+
+        <TestWithHocAppContext title={'test'} />
+      </AppProvider>
     </div>
   );
 }
